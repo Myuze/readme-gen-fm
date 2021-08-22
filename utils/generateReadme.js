@@ -90,7 +90,7 @@ function addOrderedList(oList) {
     let orderedList = "";
 
     oList.forEach(listItem, index => {
-        orderedList = `${index}. ${listItem.trim()}`
+        orderedList = `${index}. ${listItem.trim()}\n`
     })
 
     return orderedList;

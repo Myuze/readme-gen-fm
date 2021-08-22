@@ -5,19 +5,23 @@ function createTitle(title) {
 function addDescription(description, headingLevel = 2) {
     let finalDescription = "";
 
-    finalDescription += addHeading('Description:\n', headingLevel);
-    finalDescription += description + "\n"
+    finalDescription += addHeading('\nDescription:\n', headingLevel);
     finalDescription += addRule();
+    finalDescription += description + "\n"
 
     return finalDescription;
+}
+
+function addTableOfContents() {
+
 }
 
 function addInstructions(instructions, headingLevel = 2) {
     let finalInstructions = "";
 
-    finalInstructions += addHeading('Instructions:\n', headingLevel)
-    finalInstructions += instructions
+    finalInstructions += addHeading('\nInstructions:\n', headingLevel)
     finalInstructions += addRule();
+    finalInstructions += instructions + "\n"
 
     return finalInstructions;
 }
@@ -25,9 +29,9 @@ function addInstructions(instructions, headingLevel = 2) {
 function addUsage(usage, headingLevel = 2) {
     let finalUsage = "";
 
-    finalUsage += addHeading('Usage:\n', headingLevel)
-    finalUsage += usage
+    finalUsage += addHeading('\nUsage:\n', headingLevel)
     finalUsage += addRule();
+    finalUsage += usage + "\n"
 
     return finalUsage;
 }
@@ -35,9 +39,9 @@ function addUsage(usage, headingLevel = 2) {
 function addContributors(contributorsList, headingLevel = 2) {
     let finalContributors = "";
 
-    finalContributors += addHeading('Contributors:\n', headingLevel)
-    finalContributors += addList(contributorsList)
+    finalContributors += addHeading('\nContributors:\n', headingLevel)
     finalContributors += addRule();
+    finalContributors += addList(contributorsList)
 
     return finalContributors;
 }
@@ -85,7 +89,7 @@ function italicBold(text) {
 }
 
 function addRule() {
-    return '\n---\n';
+    return '---\n';
 }
 
 function addList(list) {

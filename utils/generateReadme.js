@@ -1,18 +1,58 @@
 function createTitle(title) {
-    return `### ${title}\n`;
+    return `# ${title}\n`;
+}
+
+function addDescription(description, headingLevel = 2) {
+    let finalDescription = "";
+
+    finalDescription += addHeading('Description:\n', headingLevel);
+    finalDescription += description + "\n"
+    finalDescription += addRule();
+
+    return finalDescription;
+}
+
+function addInstructions(instructions, headingLevel = 2) {
+    let finalInstructions = "";
+
+    finalInstructions += addHeading('Instructions:\n', headingLevel)
+    finalInstructions += instructions
+    finalInstructions += addRule();
+
+    return finalInstructions;
+}
+
+function addUsage(usage, headingLevel = 2) {
+    let finalUsage = "";
+
+    finalUsage += addHeading('Usage:\n', headingLevel)
+    finalUsage += usage
+    finalUsage += addRule();
+
+    return finalUsage;
+}
+
+function addContributors(contributorsList, headingLevel = 2) {
+    let finalContributors = "";
+
+    finalContributors += addHeading('Contributors:\n', headingLevel)
+    finalContributors += addList(contributorsList)
+    finalContributors += addRule();
+
+    return finalContributors;
 }
 
 function addHeading(text, level) {
     let head = '';
 
-    for (i = 0; i < level; i++) {
+    for (let i = 0; i < level; i++) {
         head += '#';
     }
 
     head += " "
     head += text;
     head += '\n'
-    
+
     return head;
 }
 
@@ -33,7 +73,41 @@ function italicBold(text) {
 }
 
 function addRule() {
-    return '---\n';
+    return '\n---\n';
 }
 
-module.exports = generateReadme;
+function addList(list) {
+    let markupList = "";
+
+    list.forEach(listItem => {
+        markupList += `- ${listItem}\n`
+    })
+
+    return markupList;
+}
+
+function addOrderedList(oList) {
+    let orderedList = "";
+
+    oList.forEach(listItem, index => {
+        orderedList = `${index}. ${listItem}`
+    })
+
+    return orderedList;
+}
+
+module.exports = {
+    createTitle,
+    addDescription,
+    addInstructions,
+    addUsage,
+    addContributors,
+    addHeading,
+    addImage,
+    bold,
+    italic,
+    italicBold,
+    addRule,
+    addList,
+    addOrderedList
+};

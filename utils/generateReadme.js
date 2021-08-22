@@ -80,7 +80,7 @@ function addList(list) {
     let markupList = "";
 
     list.forEach(listItem => {
-        markupList += `- ${listItem}\n`
+        markupList += `- ${listItem.trim()}\n`
     })
 
     return markupList;
@@ -90,7 +90,7 @@ function addOrderedList(oList) {
     let orderedList = "";
 
     oList.forEach(listItem, index => {
-        orderedList = `${index}. ${listItem}`
+        orderedList = `${index}. ${listItem.trim()}`
     })
 
     return orderedList;

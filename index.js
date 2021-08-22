@@ -37,7 +37,6 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    data.trim('"')
     fs.writeFile(fileName, data, (error, data) =>
     error ? console.error(error) : console.log(data));
 }
@@ -54,7 +53,7 @@ prompt(questions)
         var contributorsList = [];
         
         markdown += readmeGen.createTitle(response.title);
-        markdown += readmeGen.addDescription(response.description, 2);
+        markdown += readmeGen.addDescription(response.desc, 2);
         markdown += readmeGen.addInstructions(response.instructions, 2);
         markdown += readmeGen.addUsage(response.usage, 2);
         

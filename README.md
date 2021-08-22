@@ -1,7 +1,8 @@
-# This is my README.md Generator Title
+# This is my README.md Title Generator
 ## Description:
 
-undefined
+This is my really really really short short short description.
+
 ---
 ## Instructions:
 
@@ -23,9 +24,11 @@ undefined
 ---
 ## Contributors:
 
-- Me
 - You
-- Them,Theirs
-- Whoever
+-  Me
+- Them
+-  Theirs
+-  M. Rogers
+-  Evealyn Newton
 
 ---

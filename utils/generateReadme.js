@@ -2,10 +2,14 @@ function createTitle(title) {
     return `# ${title}\n`;
 }
 
+function addLicense(license) {
+    //TODO: Add License Badge
+}
+
 function addDescription(description, headingLevel = 2) {
     let finalDescription = "";
 
-    finalDescription += addHeading('\nDescription:\n', headingLevel);
+    finalDescription += addHeading('Description:\n', headingLevel);
     finalDescription += addRule();
     finalDescription += description + "\n"
 
@@ -13,13 +17,13 @@ function addDescription(description, headingLevel = 2) {
 }
 
 function addTableOfContents() {
-
+    //TODO: Add Table of Contents
 }
 
 function addInstructions(instructions, headingLevel = 2) {
     let finalInstructions = "";
 
-    finalInstructions += addHeading('\nInstructions:\n', headingLevel)
+    finalInstructions += addHeading('Instructions:\n', headingLevel)
     finalInstructions += addRule();
     finalInstructions += instructions + "\n"
 
@@ -29,7 +33,7 @@ function addInstructions(instructions, headingLevel = 2) {
 function addUsage(usage, headingLevel = 2) {
     let finalUsage = "";
 
-    finalUsage += addHeading('\nUsage:\n', headingLevel)
+    finalUsage += addHeading('Usage:\n', headingLevel)
     finalUsage += addRule();
     finalUsage += usage + "\n"
 
@@ -39,7 +43,7 @@ function addUsage(usage, headingLevel = 2) {
 function addContributors(contributorsList, headingLevel = 2) {
     let finalContributors = "";
 
-    finalContributors += addHeading('\nContributors:\n', headingLevel)
+    finalContributors += addHeading('Contributors:\n', headingLevel)
     finalContributors += addRule();
     finalContributors += addList(contributorsList)
 
@@ -47,7 +51,7 @@ function addContributors(contributorsList, headingLevel = 2) {
 }
 
 function addHeading(text, level) {
-    let head = '';
+    let head = '\n';
 
     for (let i = 0; i < level; i++) {
         head += '#';

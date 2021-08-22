@@ -32,6 +32,12 @@ const questions = [
         type: 'input',
         message: "Your contributors: ",
         name: 'contributors'
+    },
+    {
+        type: 'list',
+        message: "Select a License: ",
+        choices: ['mit', 'apache-2.0', 'ms-pl', 'osl-3.0','postgresql'],
+        name: 'license'
     }
 ];
 

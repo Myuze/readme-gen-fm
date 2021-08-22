@@ -60,6 +60,18 @@ function addImage(alt, src) {
     return `![${alt}](${src})\n`;
 }
 
+function addLink(alt, src) {
+    return `[${alt}(${src})]\n`;
+}
+
+function md(text) {
+    return `\`\`\`md\n${text}\n\`\`\`\n`
+}
+
+function bash(text) {
+    return `\`\`\`bash\n${text}\n\`\`\`\n`
+}
+
 function bold(text) {
     return `**${text}**`;
 }
@@ -104,6 +116,9 @@ module.exports = {
     addContributors,
     addHeading,
     addImage,
+    addLink,
+    md,
+    bash,
     bold,
     italic,
     italicBold,

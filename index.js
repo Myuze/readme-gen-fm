@@ -50,16 +50,16 @@ init();
 prompt(questions)
     .then((response) => {
         console.log(response)
-        var html = "";
+        var markdown = "";
         var contributorsList = [];
         
-        html += readmeGen.createTitle(response.title);
-        html += readmeGen.addDescription(response.description, 2);
-        html += readmeGen.addInstructions(response.instructions, 2);
-        html += readmeGen.addUsage(response.usage, 2);
+        markdown += readmeGen.createTitle(response.title);
+        markdown += readmeGen.addDescription(response.description, 2);
+        markdown += readmeGen.addInstructions(response.instructions, 2);
+        markdown += readmeGen.addUsage(response.usage, 2);
         
         contributorsList = response.contributors.replace(/\s+/g, ' ').split(',')
-        html += readmeGen.addContributors(contributorsList, 2)
+        markdown += readmeGen.addContributors(contributorsList, 2)
         
-        writeToFile('README.md', html)
+        writeToFile('README.md', markdown)
     }).catch((error) => error ? console.log(new Error(error)): console.log('SUCCESS'))

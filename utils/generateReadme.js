@@ -7,45 +7,66 @@ function addLicense(license) {
 }
 
 function addDescription(description, headingLevel = 2) {
+    let sectionTitle = 'Description';
     let finalDescription = "";
 
-    finalDescription += addHeading('Description:\n', headingLevel);
+    finalDescription += addHeading(sectionTitle + ':', headingLevel);
     finalDescription += addRule();
-    finalDescription += description + "\n"
+    finalDescription += description + "\n";
 
     return finalDescription;
 }
 
-function addTableOfContents() {
-    //TODO: Add Table of Contents
+function addTableOfContents(orderedContentList, headingLevel) {
+    let sectionTitle = 'Table of Contents'
+    let finalTableOfContents = "";
+
+    finalTableOfContents += addHeading(sectionTitle + ':', headingLevel);
+    finalTableOfContents += addRule();
+    finalTableOfContents += createTableOfContents(orderedContentList);
+
+    return finalTableOfContents;
+}
+
+function createTableOfContents(orderedContentList) {
+    let tableOfContents = "";
+    orderedContentList.forEach(({name: text, link}, index) => {
+        tableOfContents += `${index + 1}. `;
+        tableOfContents += addLink(text, link);
+    });
+
+    return tableOfContents;
 }
 
 function addInstructions(instructions, headingLevel = 2) {
+    let sectionTitle = 'Instructions';
     let finalInstructions = "";
 
-    finalInstructions += addHeading('Instructions:\n', headingLevel)
+    finalInstructions += addHeading(sectionTitle + ':', headingLevel)
     finalInstructions += addRule();
-    finalInstructions += instructions + "\n"
+    finalInstructions += instructions + "\n";
 
     return finalInstructions;
 }
 
 function addUsage(usage, headingLevel = 2) {
+    let sectionTitle = 'Usage';
     let finalUsage = "";
 
-    finalUsage += addHeading('Usage:\n', headingLevel)
+    finalUsage += addHeading(sectionTitle + ':', headingLevel);
     finalUsage += addRule();
-    finalUsage += usage + "\n"
+    finalUsage += usage + "\n";
 
     return finalUsage;
 }
 
 function addContributors(contributorsList, headingLevel = 2) {
+    let sectionTitle = 'Contributors'
     let finalContributors = "";
 
-    finalContributors += addHeading('Contributors:\n', headingLevel)
+    finalContributors += addHeading(sectionTitle + ':', headingLevel)
     finalContributors += addRule();
-    finalContributors += addList(contributorsList)
+    finalContributors += addList(contributorsList);
 
     return finalContributors;
 }
@@ -57,9 +78,9 @@ function addHeading(text, level) {
         head += '#';
     }
 
-    head += " "
+    head += " ";
     head += text;
-    head += '\n'
+    head += '\n\n';
 
     return head;
 }
@@ -68,16 +89,18 @@ function addImage(alt, src) {
     return `![${alt}](${src})\n`;
 }
 
+function addAnchor() {}
+
 function addLink(alt, src) {
     return `[${alt}(${src})]\n`;
 }
 
 function md(text) {
-    return `\`\`\`md\n${text}\n\`\`\`\n`
+    return `\`\`\`md\n${text}\n\`\`\`\n`;
 }
 
 function bash(text) {
-    return `\`\`\`bash\n${text}\n\`\`\`\n`
+    return `\`\`\`bash\n${text}\n\`\`\`\n`;
 }
 
 function bold(text) {
@@ -89,7 +112,7 @@ function italic(text) {
 }
 
 function italicBold(text) {
-    return `***${text}***`
+    return `***${text}***`;
 }
 
 function addRule() {
@@ -100,7 +123,7 @@ function addList(list) {
     let markupList = "";
 
     list.forEach(listItem => {
-        markupList += `- ${listItem.trim()}\n`
+        markupList += `- ${listItem.trim()}\n`;
     })
 
     return markupList;
@@ -110,8 +133,8 @@ function addOrderedList(oList) {
     let orderedList = "";
 
     oList.forEach(listItem, index => {
-        orderedList = `${index}. ${listItem.trim()}\n`
-    })
+        orderedList = `${index}. ${listItem.trim()}\n`;
+    });
 
     return orderedList;
 }
@@ -119,6 +142,7 @@ function addOrderedList(oList) {
 module.exports = {
     createTitle,
     addDescription,
+    addTableOfContents,
     addInstructions,
     addUsage,
     addContributors,

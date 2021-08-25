@@ -84,7 +84,6 @@ init();
 // Main
 prompt(questions)
     .then((response) => {
-        console.log(response)
         var markdown = "";
         var contributorsList = [];
         contactQuestions.github = response.github;

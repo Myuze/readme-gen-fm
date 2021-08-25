@@ -32,7 +32,7 @@ function addDescription(description, headingLevel = 2) {
 function addTableOfContents(orderedContentList, headingLevel) {
     let sectionTitle = 'Table of Contents';
     let finalTableOfContents = "";
-    console.log('orderedContentList: ', orderedContentList);
+
     finalTableOfContents += addHeading(sectionTitle + ':', headingLevel);
     finalTableOfContents += addRule();
     finalTableOfContents += createTableOfContents(orderedContentList);

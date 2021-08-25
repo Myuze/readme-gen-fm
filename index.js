@@ -70,7 +70,7 @@ const toc = [
     'Installation Instructions',
     'Usage',
     'Test Instructions',
-    'Contributors',
+    'Contribute',
     'Licenses',
     'Questions'
 ];

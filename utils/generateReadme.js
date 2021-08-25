@@ -43,10 +43,9 @@ function addTableOfContents(orderedContentList, headingLevel) {
 function createTableOfContents(orderedContentList) {
     let tableOfContents = "";
     orderedContentList.forEach((section, index) => {
-        console.log('section: ', section)
         let section_name = section.split(' ').join('-');
         tableOfContents += `${index + 1}. `;
-        tableOfContents += addLink(section_name, `#${section_name}`);
+        tableOfContents += addLink(section, `#${section_name}`);
     });
 
     return tableOfContents;
@@ -75,7 +74,7 @@ function addUsage(usage, headingLevel = 2) {
 }
 
 function addContributors(contributorsList, headingLevel = 2) {
-    let sectionTitle = 'Contributors';
+    let sectionTitle = 'Contribute';
     let finalContributors = "";
 
     finalContributors += addHeading(sectionTitle + ':', headingLevel);

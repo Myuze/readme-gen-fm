@@ -28,7 +28,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: "Your contributors: ",
+        message: "How to contribute, or list contributors: (CSV)",
         name: 'contributors'
     },
     {

@@ -29,6 +29,7 @@ This application prompts the user for information needed to generate a README.md
 ---
 Install to any projects, or use as a standalone application.
 
+
 ## Test Instructions:
 
 ---
@@ -51,13 +52,9 @@ mit
 ### Where can I find your other work?
 
 
-
 [Github: Myuze](https://github.com/Myuze)
-
 
 ### If you have any other questions, you can reach me at:
 
 
-
 [flmeneses.dev@gmail.com](mailto:flmeneses.dev@gmail.com)
-

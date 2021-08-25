@@ -101,10 +101,10 @@ function addQuestions(contactQuestions, headingLevel) {
 
     finalQuestions += addHeading(sectionTitle + ':', headingLevel);
     finalQuestions += addRule();
-    finalQuestions += addHeading("Where can I find your other work?\n\n", headingLevel + 1);
-    finalQuestions += `[Github: ${contactQuestions.github}](https://github.com/${contactQuestions.github})\n\n`;
-    finalQuestions += addHeading("If you have any other questions, you can reach me at:\n\n", headingLevel + 1);
-    finalQuestions += `[${contactQuestions.email}](mailto:${contactQuestions.email})\n\n`;
+    finalQuestions += addHeading("Where can I find your other work?", headingLevel + 1);
+    finalQuestions += `[Github: ${contactQuestions.github}](https://github.com/${contactQuestions.github})\n`;
+    finalQuestions += addHeading("If you have any other questions, you can reach me at:", headingLevel + 1);
+    finalQuestions += `[${contactQuestions.email}](mailto:${contactQuestions.email})\n`;
 
     return finalQuestions;
 }

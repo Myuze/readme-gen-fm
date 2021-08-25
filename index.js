@@ -47,13 +47,18 @@ function writeToFile(fileName, data) {
 
 // A function to initialize app
 function init() {
-    questions.forEach(({name: tocItem}) => {
-        toc.push(tocItem);
-    });
+    // questions.forEach(({name: tocItem}) => {
+    //     toc.push(tocItem);
+    // });
 }
 
 // Function call to initialize app
-const toc = [];
+const toc = [
+    'Instructions',
+    'Usage',
+    'Contributors',
+    'Licenses'
+];
 init();
 
 // Main

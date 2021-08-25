@@ -20,7 +20,7 @@ function addDescription(description, headingLevel = 2) {
 function addTableOfContents(orderedContentList, headingLevel) {
     let sectionTitle = 'Table of Contents'
     let finalTableOfContents = "";
-
+    console.log('orderedContentList: ', orderedContentList)
     finalTableOfContents += addHeading(sectionTitle + ':', headingLevel);
     finalTableOfContents += addRule();
     finalTableOfContents += createTableOfContents(orderedContentList);
@@ -30,9 +30,11 @@ function addTableOfContents(orderedContentList, headingLevel) {
 
 function createTableOfContents(orderedContentList) {
     let tableOfContents = "";
-    orderedContentList.forEach(({name: text, link}, index) => {
+    orderedContentList.forEach((section, index) => {
+        console.log('section: ', section)
+        let section_name = section.split(' ').join('-');
         tableOfContents += `${index + 1}. `;
-        tableOfContents += addLink(text, link);
+        tableOfContents += addLink(section_name, `#${section_name}`);
     });
 
     return tableOfContents;
@@ -92,7 +94,8 @@ function addImage(alt, src) {
 function addAnchor() {}
 
 function addLink(alt, src) {
-    return `[${alt}(${src})]\n`;
+    let lowerSrc = src.toLowerCase();
+    return `[${alt}](${lowerSrc})\n`;
 }
 
 function md(text) {

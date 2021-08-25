@@ -1,9 +1,21 @@
+// Required Packages
+const genLicense = require('./generateLicense');
+
+// Markdown Functions
 function createTitle(title) {
     return `# ${title}\n`;
 }
 
-function addLicense(license) {
+function addLicense(license, headingLevel) {
     //TODO: Add License Badge
+    let sectionTitle = 'Licenses';
+    let finalLicenses = "";
+
+    finalLicenses += addHeading(sectionTitle + ':', headingLevel);
+    finalLicenses += addRule();
+    finalLicenses += license + "\n";
+
+    return finalLicenses;
 }
 
 function addDescription(description, headingLevel = 2) {
@@ -18,9 +30,9 @@ function addDescription(description, headingLevel = 2) {
 }
 
 function addTableOfContents(orderedContentList, headingLevel) {
-    let sectionTitle = 'Table of Contents'
+    let sectionTitle = 'Table of Contents';
     let finalTableOfContents = "";
-    console.log('orderedContentList: ', orderedContentList)
+    console.log('orderedContentList: ', orderedContentList);
     finalTableOfContents += addHeading(sectionTitle + ':', headingLevel);
     finalTableOfContents += addRule();
     finalTableOfContents += createTableOfContents(orderedContentList);
@@ -40,15 +52,15 @@ function createTableOfContents(orderedContentList) {
     return tableOfContents;
 }
 
-function addInstructions(instructions, headingLevel = 2) {
-    let sectionTitle = 'Instructions';
-    let finalInstructions = "";
+function addInstallInstructions(instructions, headingLevel = 2) {
+    let sectionTitle = 'Installation Instructions';
+    let finalInstallInstructions = "";
 
-    finalInstructions += addHeading(sectionTitle + ':', headingLevel)
-    finalInstructions += addRule();
-    finalInstructions += instructions + "\n";
+    finalInstallInstructions += addHeading(sectionTitle + ':', headingLevel);
+    finalInstallInstructions += addRule();
+    finalInstallInstructions += instructions + "\n";
 
-    return finalInstructions;
+    return finalInstallInstructions;
 }
 
 function addUsage(usage, headingLevel = 2) {
@@ -63,14 +75,39 @@ function addUsage(usage, headingLevel = 2) {
 }
 
 function addContributors(contributorsList, headingLevel = 2) {
-    let sectionTitle = 'Contributors'
+    let sectionTitle = 'Contributors';
     let finalContributors = "";
 
-    finalContributors += addHeading(sectionTitle + ':', headingLevel)
+    finalContributors += addHeading(sectionTitle + ':', headingLevel);
     finalContributors += addRule();
     finalContributors += addList(contributorsList);
 
     return finalContributors;
+}
+
+function addTestInstructions(testInstructions, headingLevel) {
+    let sectionTitle = 'Test Instructions';
+    let finalTestInstructions = "";
+
+    finalTestInstructions += addHeading(sectionTitle + ':', headingLevel);
+    finalTestInstructions += addRule();
+    finalTestInstructions += testInstructions + "\n";
+
+    return finalTestInstructions;
+}
+
+function addQuestions(contactQuestions, headingLevel) {
+    let sectionTitle = 'Questions';
+    let finalQuestions = "";
+
+    finalQuestions += addHeading(sectionTitle + ':', headingLevel);
+    finalQuestions += addRule();
+    finalQuestions += addHeading("Where can I find your other work?\n\n", headingLevel + 1);
+    finalQuestions += `[Github: ${contactQuestions.github}](https://github.com/${contactQuestions.github})\n\n`;
+    finalQuestions += addHeading("If you have any other questions, you can reach me at:\n\n", headingLevel + 1);
+    finalQuestions += `[${contactQuestions.email}](mailto:${contactQuestions.email})\n\n`;
+
+    return finalQuestions;
 }
 
 function addHeading(text, level) {
@@ -146,9 +183,12 @@ module.exports = {
     createTitle,
     addDescription,
     addTableOfContents,
-    addInstructions,
+    addInstallInstructions,
     addUsage,
     addContributors,
+    addLicense,
+    addTestInstructions,
+    addQuestions,
     addHeading,
     addImage,
     addLink,

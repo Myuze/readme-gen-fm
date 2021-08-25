@@ -19,7 +19,7 @@ const questions = [
     {
         type: 'editor',
         message: "Enter installation instructions: ",
-        name: 'instructions'
+        name: 'install'
     },
     {
         type: 'editor',
@@ -36,6 +36,21 @@ const questions = [
         message: "Select a License: ",
         choices: ['mit', 'apache-2.0', 'ms-pl', 'osl-3.0','postgresql'],
         name: 'license'
+    },
+    {
+        type: 'editor',
+        message: "Add any test instructions: ",
+        name: 'tests'
+    },
+    {
+        type: 'input',
+        message: "What is your Github username: ",
+        name: 'github'
+    },
+    {
+        type: 'input',
+        message: "What is your contact Email address: ",
+        name: 'email'
     }
 ];
 
@@ -47,18 +62,23 @@ function writeToFile(fileName, data) {
 
 // A function to initialize app
 function init() {
-    // questions.forEach(({name: tocItem}) => {
-    //     toc.push(tocItem);
-    // });
+      
 }
 
 // Function call to initialize app
 const toc = [
-    'Instructions',
+    'Installation Instructions',
     'Usage',
+    'Test Instructions',
     'Contributors',
-    'Licenses'
+    'Licenses',
+    'Questions'
 ];
+
+const contactQuestions = {
+    github: "",
+    email: ""
+}  
 init();
 
 // Main
@@ -67,15 +87,21 @@ prompt(questions)
         console.log(response)
         var markdown = "";
         var contributorsList = [];
+        contactQuestions.github = response.github;
+        contactQuestions.email = response.email;
         
         markdown += readmeGen.createTitle(response.title);
         markdown += readmeGen.addDescription(response.desc, 2);
         markdown += readmeGen.addTableOfContents(toc, 2);
-        markdown += readmeGen.addInstructions(response.instructions, 2);
+        markdown += readmeGen.addInstallInstructions(response.install, 2);
         markdown += readmeGen.addUsage(response.usage, 2);
+        markdown += readmeGen.addTestInstructions(response.tests, 2);
         
         contributorsList = response.contributors.replace(/\s+/g, ' ').split(',');
         markdown += readmeGen.addContributors(contributorsList, 2);
+        
+        markdown += readmeGen.addLicense(response.license, 2);
+        markdown += readmeGen.addQuestions(contactQuestions, 2);
         
         writeToFile('README.md', markdown);
     }).catch((error) => error ? console.log(new Error(error)): console.log('SUCCESS'));

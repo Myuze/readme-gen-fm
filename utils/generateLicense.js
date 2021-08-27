@@ -3,7 +3,7 @@ const availableLicenses = [
     license: 'mit',
     badge: "https://img.shields.io/badge/License-MIT-yellow.svg",
     link: "https://opensource.org/licenses/MIT",
-    short: `**MIT License**\nCopyright (c) <YEAR> <NAME>`
+    short: `**MIT License**\nCopyright &#169; <YEAR> <NAME>`
   },
   {
     license: 'apache-2.0',

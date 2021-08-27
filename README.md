@@ -1,4 +1,5 @@
 # Welcome to my README.md generator application.
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description:
 
@@ -29,7 +30,6 @@ This application prompts the user for information needed to generate a README.md
 ---
 Install to any projects, or use as a standalone application.
 
-
 ## Test Instructions:
 
 ---
@@ -43,7 +43,9 @@ Add any test instructions as needed.
 ## Licenses:
 
 ---
-mit
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+**MIT License**
+Copyright &#169; <YEAR> <NAME>
 
 ## Questions:
 
@@ -51,10 +53,8 @@ mit
 
 ### Where can I find your other work?
 
-
 [Github: Myuze](https://github.com/Myuze)
 
 ### If you have any other questions, you can reach me at:
-
 
 [flmeneses.dev@gmail.com](mailto:flmeneses.dev@gmail.com)

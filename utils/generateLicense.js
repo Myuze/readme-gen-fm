@@ -43,8 +43,8 @@ const availableLicenses = [
 function renderLicenseBadge(license) {
   availableLicenses.forEach(licenseInfo => {
     if (licenseInfo.license === license) {
-      return `[![License](${licenseInfo.badge})](${licenseInfo.link})`;
-    };
+      return `[![License](${licenseInfo.badge})](${licenseInfo.link})\n`;
+    } else { return; };
   });
 };
 
@@ -53,8 +53,8 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   availableLicenses.forEach(licenseInfo => {
     if (licenseInfo.license === license) {
-      return `${licenseInfo.short}`;
-    };
+      return `${licenseInfo.short}\n`;
+    } else { return; };
   });
 }
 

@@ -12,7 +12,7 @@ function addLicense(license, headingLevel) {
 
     finalLicenses += addHeading(sectionTitle + ':', headingLevel);
     finalLicenses += addRule();
-    finalLicenses += genLicense.renderLicenseLink(license) + "\n";
+    finalLicenses += genLicense.renderLicenseLink(license);
 
     return finalLicenses;
 }

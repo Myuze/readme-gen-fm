@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const readmeGen = require('./utils/generateReadme');
+const genLicense = require('./utils/generateLicense');
 const prompt = inquirer.createPromptModule();
 
 // An array of questions for user input
@@ -90,6 +91,7 @@ prompt(questions)
         contactQuestions.email = response.email;
         
         markdown += readmeGen.createTitle(response.title);
+        markdown += genLicense.renderLicenseBadge(response.license);
         markdown += readmeGen.addDescription(response.desc, 2);
         markdown += readmeGen.addTableOfContents(toc, 2);
         markdown += readmeGen.addInstallInstructions(response.install, 2);

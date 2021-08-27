@@ -7,13 +7,12 @@ function createTitle(title) {
 }
 
 function addLicense(license, headingLevel) {
-    //TODO: Add License Badge
     let sectionTitle = 'Licenses';
     let finalLicenses = "";
 
     finalLicenses += addHeading(sectionTitle + ':', headingLevel);
     finalLicenses += addRule();
-    finalLicenses += license + "\n";
+    finalLicenses += genLicense.renderLicenseLink(license) + "\n";
 
     return finalLicenses;
 }

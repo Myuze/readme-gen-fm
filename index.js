@@ -63,7 +63,6 @@ function writeToFile(fileName, data) {
 
 // A function to initialize app
 function init() {
-      
 }
 
 // Function call to initialize app
@@ -90,6 +89,7 @@ prompt(questions)
         contactQuestions.github = response.github;
         contactQuestions.email = response.email;
         
+        // Generate Markdown for README.md
         markdown += readmeGen.createTitle(response.title);
         markdown += genLicense.renderLicenseBadge(response.license);
         markdown += readmeGen.addDescription(response.desc, 2);

@@ -34,7 +34,7 @@ const questions = [
     {
         type: 'list',
         message: "Select a License: ",
-        choices: ['mit', 'apache-2.0', 'ms-pl', 'osl-3.0','postgresql'],
+        choices: ['mit', 'apache-2.0', 'gpl-3.0', 'MPL-2.0','EPL-1.0'],
         name: 'license'
     },
     {

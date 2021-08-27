@@ -61,11 +61,41 @@ function writeToFile(fileName, data) {
     error ? console.error(error) : console.log(data));
 }
 
-// A function to initialize app
-function init() {
+function generateMarkdown(response) {
+    var markdown = "";
+    var contributorsList = [];
+
+    markdown += readmeGen.createTitle(response.title);
+    markdown += genLicense.renderLicenseBadge(response.license);
+    markdown += readmeGen.addDescription(response.desc, 2);
+    markdown += readmeGen.addTableOfContents(toc, 2);
+    markdown += readmeGen.addInstallInstructions(response.install, 2);
+    markdown += readmeGen.addUsage(response.usage, 2);
+    markdown += readmeGen.addTestInstructions(response.tests, 2);
+    
+    contributorsList = response.contributors.replace(/\s+/g, ' ').split(',');
+    markdown += readmeGen.addContributors(contributorsList, 2);
+    
+    markdown += readmeGen.addLicense(response.license, 2);
+    markdown += readmeGen.addQuestions(contactQuestions, 2);
+    
+    writeToFile('README.md', markdown);
 }
 
-// Function call to initialize app
+// A function to initialize app
+function init() {
+    prompt(questions)
+    .then((response) => {
+        contactQuestions.github = response.github;
+        contactQuestions.email = response.email;
+        
+        // Generate Markdown for README.md
+        generateMarkdown(response);
+
+    }).catch((error) => error ? console.log(new Error(error)): console.log('SUCCESS'));
+}
+
+// Main
 const toc = [
     'Installation Instructions',
     'Usage',
@@ -79,30 +109,6 @@ const contactQuestions = {
     github: "",
     email: ""
 }  
-init();
 
-// Main
-prompt(questions)
-    .then((response) => {
-        var markdown = "";
-        var contributorsList = [];
-        contactQuestions.github = response.github;
-        contactQuestions.email = response.email;
-        
-        // Generate Markdown for README.md
-        markdown += readmeGen.createTitle(response.title);
-        markdown += genLicense.renderLicenseBadge(response.license);
-        markdown += readmeGen.addDescription(response.desc, 2);
-        markdown += readmeGen.addTableOfContents(toc, 2);
-        markdown += readmeGen.addInstallInstructions(response.install, 2);
-        markdown += readmeGen.addUsage(response.usage, 2);
-        markdown += readmeGen.addTestInstructions(response.tests, 2);
-        
-        contributorsList = response.contributors.replace(/\s+/g, ' ').split(',');
-        markdown += readmeGen.addContributors(contributorsList, 2);
-        
-        markdown += readmeGen.addLicense(response.license, 2);
-        markdown += readmeGen.addQuestions(contactQuestions, 2);
-        
-        writeToFile('README.md', markdown);
-    }).catch((error) => error ? console.log(new Error(error)): console.log('SUCCESS'));
+// Function call to initialize app
+init();

@@ -12,6 +12,7 @@ function addLicense(license, headingLevel) {
 
     finalLicenses += addHeading(sectionTitle + ':', headingLevel);
     finalLicenses += addRule();
+    finalLicenses += genLicense.renderLicenseBadge(license);
     finalLicenses += genLicense.renderLicenseLink(license);
 
     return finalLicenses;

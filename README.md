@@ -1,10 +1,10 @@
-# Title
-[![License](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+# Welcome to my README.md generator application.
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description:
 
 ---
-Desc
+This application prompts the user for information needed to generate a README.md file.
 
 ## Table of Contents:
 
@@ -19,38 +19,42 @@ Desc
 ## Installation Instructions:
 
 ---
-Inst
+1. Install `node.js`
+2. Clone the `readme-gen-fm` repository.
+3. From the CLI, `npm install`
+4. Then use, `node index.js`
+5. Follow the Prompts.
 
 ## Usage:
 
 ---
-Usage
-
+Install to any projects, or use as a standalone application.
 
 ## Test Instructions:
 
 ---
-Test
+Add any test instructions as needed.
 
 ## Contribute:
 
 ---
-- CSV
+- Contact me or Request to be a contributor.
 
 ## Licenses:
 
 ---
-[![License](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
-**Mozilla Public License Version 2.0**
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+**MIT License**
+Copyright &#169; <YEAR> <NAME>
 
 ## Questions:
 
 ---
 
-### Where can I find your other work?
+### What is your Github username?
 
-[Github: Myuze](https://github.com/Myuze)
+[Myuze](https://github.com/Myuze)
 
 ### If you have any other questions, you can reach me at:
 
-[email](mailto:email)
+[flmeneses.dev@gmail.com](mailto:flmeneses.dev@gmail.com)

@@ -4,6 +4,7 @@
 ## Description:
 
 ---
+https://drive.google.com/file/d/1pBRzF0Tgyw9oXvJ6FKDOLTUCIuDQo5aK/view
 This application prompts the user for information needed to generate a README.md file.
 
 ## Table of Contents:
@@ -24,6 +25,8 @@ This application prompts the user for information needed to generate a README.md
 3. From the CLI, `npm install`
 4. Then use, `node index.js`
 5. Follow the Prompts.
+
+![README Generator Tutorial](https://drive.google.com/file/d/1pBRzF0Tgyw9oXvJ6FKDOLTUCIuDQo5aK/view)
 
 ## Usage:
 
